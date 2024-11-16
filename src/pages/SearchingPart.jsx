@@ -41,3 +41,5 @@ function SearchingPart() {
       </div>
    )
 }
+
+export default SearchingPart()
