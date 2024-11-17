@@ -11,7 +11,7 @@ function SearchingPart() {
    }
    const navigate = useNavigate()
    const handleSearch = (event) => {
-      event.preventDefault()
+      event.preventDefault() //지혼자 새로고침되는것을 막아줌.
 
       if (searchQuery.trim()) {
          navigate(`/search?query=${searchQuery}`) //이동경로 지정
