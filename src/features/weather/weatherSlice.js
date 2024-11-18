@@ -35,3 +35,5 @@ const weathersSlice = createSlice({
          })
    },
 })
+
+export default weathersSlice.reducer
