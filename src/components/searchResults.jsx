@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchSearchResults } from '../features/weather/weatherSlice'
 
 function SearchResults() {
    const [searchParams] = useSearchParams() //쿼리 파라미터 가져오기

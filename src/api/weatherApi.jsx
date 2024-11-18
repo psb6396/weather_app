@@ -22,7 +22,7 @@ const fetchFromApi = async (url, params = {}) => {
 }
 
 //현재날씨 가져오기
-export const searchWeather = (cityname = incheon) => {
+export const searchWeather = (cityname = 'incheon') => {
    return fetchFromApi('/weather', {
       q: cityname,
    })
