@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
-function SearchingPart() {
+function SearchingPart({ searchResults }) {
    const [searchQuery, setSearchQuery] = useState('')
    const handleInputChange = (event) => {
       setSearchQuery(event.target.value)
@@ -43,6 +43,7 @@ function SearchingPart() {
                </Button>
             </form>
          </div>
+         {/* <p>{searchResults}</p> */}
       </div>
    )
 }

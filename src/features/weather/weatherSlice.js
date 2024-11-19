@@ -3,7 +3,7 @@ import { searchWeather } from '../../api/weatherApi'
 
 export const fetchSearchResults = createAsyncThunk('weathers/fetchSearchResults', async ({ query }) => {
    const response = await searchWeather(query)
-   return response
+   return response.data
 })
 
 const weathersSlice = createSlice({
@@ -11,7 +11,7 @@ const weathersSlice = createSlice({
    initialState: {
       loading: false,
       weathers: [],
-      SearchResults: [],
+      SearchResults: null,
       error: null,
    },
    reducers: {},
@@ -25,7 +25,6 @@ const weathersSlice = createSlice({
          //성공상태
          .addCase(fetchSearchResults.fulfilled, (state, action) => {
             state.loading = false
-            // console.log(action)
             state.SearchResults = action.payload
          })
          //실패상태
