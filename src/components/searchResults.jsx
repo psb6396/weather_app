@@ -12,9 +12,8 @@ function SearchResults() {
    useEffect(() => {
       dispatch(fetchSearchResults({ query }))
    }, [dispatch, query])
-   console.log(SearchResults)
 
-   return <SearchingPart searchResults={SearchResults} />
+   return <SearchingPart SearchResults={SearchResults} />
 }
 
 export default SearchResults

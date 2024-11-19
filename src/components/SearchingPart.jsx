@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
-function SearchingPart({ searchResults }) {
+function SearchingPart({ SearchResults }) {
    const [searchQuery, setSearchQuery] = useState('')
    const handleInputChange = (event) => {
       setSearchQuery(event.target.value)
@@ -18,32 +18,52 @@ function SearchingPart({ searchResults }) {
       }
    }
 
+   console.log(SearchResults)
+
    return (
-      <div
-         style={{
-            position: 'relative',
-            left: '200px',
-            top: '100px',
-            width: '400px',
-            height: '400px',
-            backgroundColor: 'gray',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-         }}
-      >
-         <div className="search">
-            <h1 className="header_msg">지역을 검색하세요</h1>
+      <div>
+         <div
+            style={{
+               display: 'inline-block',
+               position: 'relative',
+               // left: '200px',
+               // top: '100px',
+               width: '400px',
+               height: '400px',
+               backgroundColor: 'gray',
+               backgroundSize: 'cover',
+               backgroundPosition: 'center',
+               backgroundRepeat: 'no-repeat',
+            }}
+         >
+            <div className="search">
+               <h1 className="header_msg">지역을 검색하세요</h1>
 
-            <form className="search_form" onSubmit={handleSearch}>
-               <TextField sx={{ backgroundColor: 'white' }} width="100px" label="지역검색" id="fullWidth" value={searchQuery} onChange={handleInputChange} />
+               <form className="search_form" onSubmit={handleSearch}>
+                  <TextField sx={{ backgroundColor: 'white' }} width="100px" label="지역검색" id="fullWidth" value={searchQuery} onChange={handleInputChange} />
 
-               <Button sx={{ width: 100, height: 56, backgroundColor: 'white' }} variant="outlined" startIcon={<SearchIcon />} type="submit">
-                  검색
-               </Button>
-            </form>
+                  <Button sx={{ width: 100, height: 56, backgroundColor: 'white' }} variant="outlined" startIcon={<SearchIcon />} type="submit">
+                     검색
+                  </Button>
+               </form>
+            </div>
          </div>
-         {/* <p>{searchResults}</p> */}
+         <div
+            style={{
+               // display: 'inline-block',
+               // position: 'relative',
+               // left: '600px',
+               // top: '10px',
+               width: '400px',
+               height: '400px',
+               backgroundColor: 'gray',
+               backgroundSize: 'cover',
+               backgroundPosition: 'center',
+               backgroundRepeat: 'no-repeat',
+            }}
+         >
+            {SearchResults !== undefined ? SearchResults.id : <p>null</p>}
+         </div>
       </div>
    )
 }
