@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Button, TextField } from '@mui/material'
@@ -10,13 +10,13 @@ function SearchingPart({ SearchResults }) {
       setSearchQuery(event.target.value)
    }
    const navigate = useNavigate()
-   const handleSearch = (event) => {
+   const handleSearch = useCallback((event) => {
       event.preventDefault() //지혼자 새로고침되는것을 막아줌.
 
       if (searchQuery.trim()) {
          navigate(`/search?query=${searchQuery}`) //이동경로 지정
       }
-   }
+   },[searchQuery,navigate])
 
    console.log(SearchResults)
 
@@ -62,7 +62,7 @@ function SearchingPart({ SearchResults }) {
                backgroundRepeat: 'no-repeat',
             }}
          >
-            {SearchResults !== undefined ? SearchResults.id : <p>null</p>}
+            {SearchResults ? (<p>{SearchResults.id}</p>) : <p>null</p>}
          </div>
       </div>
    )
