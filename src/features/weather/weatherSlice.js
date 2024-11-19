@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { SearchResults } from '../../components/SearchResults'
 import { searchWeather } from '../../api/weatherApi'
+import { act } from 'react'
 
 export const fetchSearchResults = createAsyncThunk('weathers/fetchSearchResults', async ({ query }) => {
    const response = await searchWeather(query)
@@ -26,7 +27,8 @@ const weathersSlice = createSlice({
          //성공상태
          .addCase(fetchSearchResults.fulfilled, (state, action) => {
             state.loading = false
-            console.log(action)
+            // console.log(action)
+            state.SearchResults = action.payload
          })
          //실패상태
          .addCase(fetchSearchResults.rejected, (state, action) => {
