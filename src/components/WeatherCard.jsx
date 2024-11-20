@@ -12,14 +12,20 @@ export default function WeatherCard({ forecasts_list }) {
       <Grid container spacing={2.5}>
          {forecasts_list.map((forecast) => (
             <Card sx={{ maxWidth: 345 }}>
-               <CardMedia sx={{ height: 140 }} image="/static/images/cards/contemplative-reptile.jpg" title="....." />
+               {forecast.weather.map((element) => (
+                  <p>{element.description}</p>
+               ))}
+               <CardMedia sx={{ height: 140 }} image={movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : '/images/poster.png'} title="....." />
                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                     {forecast.dt_txt}
+                  <Typography gutterBottom variant="h5" component="div"></Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                     {forecast.weather.map((element) => (
+                        <p>{element.description}</p>
+                     ))}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                      asdfsadf
-                  </Typography>
+                  </Typography> */}
                </CardContent>
             </Card>
          ))}
