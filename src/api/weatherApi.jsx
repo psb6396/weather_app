@@ -7,6 +7,7 @@ const weatherApi = axios.create({
    baseURL: BASE_URL,
    params: {
       appid: AUTH_KEY,
+      units: 'metric', //켈빈 단위에서 섭씨로 바꿔주기 단위
    },
 })
 
