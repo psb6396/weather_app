@@ -33,5 +33,6 @@ export const searchCurrentWeather = (cityname) => {
 export const forecast5days = (cityname) => {
    return fetchFromApi('/forecast', {
       q: cityname,
+      lang: 'kr',
    })
 }

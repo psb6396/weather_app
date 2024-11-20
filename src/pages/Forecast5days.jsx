@@ -31,7 +31,7 @@ function Forecast5days() {
       <>
          {forecasts_list ? (
             <div>
-               <WeatherCard forecasts_list={forecasts_list}></WeatherCard>
+               <WeatherCard forecasts_list={forecasts_list} name={forecasts.city.name}></WeatherCard>
                {/* <p>forecasts_list가 전달됨.</p> */}
             </div>
          ) : (
