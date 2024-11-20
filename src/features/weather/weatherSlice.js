@@ -44,7 +44,7 @@ const weathersSlice = createSlice({
          })
          .addCase(fetchforecast5days.fulfilled, (state, action) => {
             state.loading = false
-            state.SearchResults = action.payload
+            state.forecasts = action.payload
          })
          .addCase(fetchforecast5days.rejected, (state, action) => {
             state.loading = false

@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia'
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography'
 
-export default function WeatherCard() {
+export default function WeatherCard({ forecasts }) {
    return (
       <Card sx={{ maxWidth: 345 }}>
          <CardMedia sx={{ height: 140 }} image="/static/images/cards/contemplative-reptile.jpg" title="green iguana" />
