@@ -1,8 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { searchWeather } from '../../api/weatherApi'
+import { searchCurrentWeather, forecast5days } from '../../api/weatherApi'
 
 export const fetchSearchResults = createAsyncThunk('weathers/fetchSearchResults', async ({ query }) => {
-   const response = await searchWeather(query)
+   const response = await searchCurrentWeather(query)
+   return response.data
+})
+
+export const fetchforecast5days = createAsyncThunk('weathers/fetchforecast5days', async ({ query }) => {
+   const response = await forecast5days(query)
    return response.data
 })
 

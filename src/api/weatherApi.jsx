@@ -22,8 +22,15 @@ const fetchFromApi = async (url, params = {}) => {
 }
 
 //현재날씨 가져오기
-export const searchWeather = (cityname) => {
+export const searchCurrentWeather = (cityname) => {
    return fetchFromApi('/weather', {
+      q: cityname,
+   })
+}
+
+//5일치 날씨 가져오기
+export const forecast5days = (cityname) => {
+   return fetchFromApi('/forecast', {
       q: cityname,
    })
 }
