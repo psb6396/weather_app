@@ -66,7 +66,7 @@ function SearchingPart({ SearchResults }) {
             }}
          >
             {SearchResults ? <p>{SearchResults.id}</p> : <p>null</p>}
-            <Link to="/forecast5days">`${SearchResults.name}의 5일치 날씨`</Link>
+            <Link to={`/forecast5days?query=${SearchResults.name}`}>{`${SearchResults.name}의 5일치 날씨`}</Link>
          </div>
       </div>
    )

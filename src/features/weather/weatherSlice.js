@@ -14,6 +14,7 @@ export const fetchforecast5days = createAsyncThunk('weathers/fetchforecast5days'
 const weathersSlice = createSlice({
    name: 'weathers',
    initialState: {
+      forecasts: [],
       loading: false,
       weathers: [],
       SearchResults: null,
@@ -34,6 +35,18 @@ const weathersSlice = createSlice({
          })
          //실패상태
          .addCase(fetchSearchResults.rejected, (state, action) => {
+            state.loading = false
+            state.error = action.error.message
+         })
+         .addCase(fetchforecast5days.pending, (state) => {
+            state.loading = true
+            state.error = null
+         })
+         .addCase(fetchforecast5days.fulfilled, (state, action) => {
+            state.loading = false
+            state.SearchResults = action.payload
+         })
+         .addCase(fetchforecast5days.rejected, (state, action) => {
             state.loading = false
             state.error = action.error.message
          })
