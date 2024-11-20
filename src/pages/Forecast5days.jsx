@@ -27,7 +27,18 @@ function Forecast5days() {
    //       })
    //    }
    // console.log(forecasts_list)
-   return <WeatherCard forecasts_list={forecasts_list}></WeatherCard>
+   return (
+      <>
+         {forecasts_list ? (
+            <div>
+               <WeatherCard forecasts_list={forecasts_list}></WeatherCard>
+               {/* <p>forecasts_list가 전달됨.</p> */}
+            </div>
+         ) : (
+            <p>forecasts_list가 전달되지 않음.</p>
+         )}
+      </>
+   )
 }
 // 리턴값에 null이 넘어가지 않게끔 장치 만들기
 export default Forecast5days
