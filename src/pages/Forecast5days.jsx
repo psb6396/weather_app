@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
+var forecasts_list = []
 function Forecast5days() {
    const [Params] = useSearchParams()
    const query = Params.get('query')
@@ -15,7 +16,18 @@ function Forecast5days() {
    }, [dispatch, query])
    const { forecasts, loading, error } = useSelector((state) => state.weathers)
 
-   return <WeatherCard forecasts={forecasts} />
+   forecasts_list = forecasts.list
+   //    console.log(forecasts_list)
+   //    useEffect(() => {
+   //       console.log(Array.isArray(forecasts_list))
+   //    }, [forecasts_list, forecasts])
+   if (forecasts_list !== undefined) {
+      forecasts_list.forEach((forecast) => {
+         console.log(forecast.dt_txt)
+      })
+   }
+   // console.log(forecasts_list)
+   return <WeatherCard forecasts={forecasts}></WeatherCard>
 }
 
 export default Forecast5days
