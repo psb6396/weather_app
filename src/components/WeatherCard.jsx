@@ -9,14 +9,16 @@ import Grid from '@mui/material/Grid2'
 
 export default function WeatherCard({ forecasts_list }) {
    return (
-      <Card sx={{ maxWidth: 345 }}>
-         <CardMedia sx={{ height: 140 }} image="/static/images/cards/contemplative-reptile.jpg" title="green iguana" />
-         <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-               Lizard
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}></Typography>
-         </CardContent>
-      </Card>
+      <Grid container spacing={2.5}>
+         {forecasts_list.map((forecast) => (
+            <Card sx={{ maxWidth: 345 }}>
+               <CardMedia sx={{ height: 140 }} image="/static/images/cards/contemplative-reptile.jpg" title="green iguana" />
+               <CardContent>
+                  <Typography gutterBottom variant="h5" component="div"></Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}></Typography>
+               </CardContent>
+            </Card>
+         ))}
+      </Grid>
    )
 }
