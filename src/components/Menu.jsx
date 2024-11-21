@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import '../css/footer.css'
+import logo from '../img/logo_white_cropped.png'
 
 function Menu() {
    return (
@@ -7,8 +8,8 @@ function Menu() {
          <nav>
             <ul>
                <li>
-                  <NavLink to="/" image="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png">
-                     {/* <img src="../img/logo_white_cropped" /> */}
+                  <NavLink to="/">
+                     <img src={logo} />
                   </NavLink>
                </li>
             </ul>
