@@ -1,11 +1,14 @@
-import SearchingPart from "../components/SearchingPart"
+import SearchingPart from '../components/SearchingPart'
 
+import Menu from '../components/Menu'
 
 function Main() {
-    return (
-        <SearchingPart></SearchingPart>
-        
-    )
+   return (
+      <div>
+         <Menu />
+         <SearchingPart />
+      </div>
+   )
 }
 
 export default Main
