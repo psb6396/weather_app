@@ -4,12 +4,15 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid2'
+import Footer from './Footer'
+import Menu from './Menu'
 
 export default function WeatherCard({ forecasts_list, name }) {
    var hour = null
    return (
       <>
-         <h1>{name}의 5일치 날씨(12시기준)</h1>
+         <Menu />
+         <h1 style={{ paddingTop: '30px' }}>{name}의 5일치 날씨(12시기준)</h1>
          <Grid class="container" container spacing={2.5}>
             {forecasts_list.map((forecast) => {
                hour = parseInt(forecast.dt_txt.split(' ')[1].split(':')[0], 10)
@@ -38,6 +41,7 @@ export default function WeatherCard({ forecasts_list, name }) {
                }
             })}
          </Grid>
+         <Footer />
       </>
    )
 }
