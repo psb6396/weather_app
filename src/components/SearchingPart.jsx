@@ -26,7 +26,7 @@ function SearchingPart({ SearchResults }) {
    // console.log(SearchResults)
 
    return (
-      <div class="parent-container">
+      <>
          <Menu />
          <div class="container">
             <div
@@ -82,7 +82,7 @@ function SearchingPart({ SearchResults }) {
                )}
             </div>
          </div>
-      </div>
+      </>
    )
 }
 

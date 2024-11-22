@@ -10,7 +10,7 @@ export default function WeatherCard({ forecasts_list, name }) {
    return (
       <>
          <h1>{name}의 5일치 날씨(12시기준)</h1>
-         <Grid container spacing={2.5}>
+         <Grid class="container" container spacing={2.5}>
             {forecasts_list.map((forecast) => {
                hour = parseInt(forecast.dt_txt.split(' ')[1].split(':')[0], 10)
                if (hour === 12) {
