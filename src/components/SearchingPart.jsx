@@ -65,9 +65,17 @@ function SearchingPart({ SearchResults }) {
             >
                {SearchResults ? (
                   <p>
-                     <h2>{SearchResults.name}의 날씨</h2>
+                     <h3>
+                        {SearchResults.name}의 현재날씨 :
+                        {SearchResults.weather.map((element) => (
+                           <>{element.description}</>
+                        ))}
+                     </h3>
+                     <p>온도 : {SearchResults.main.temp}도</p>
+                     <p>체감온도 : {SearchResults.main.feels_like}도</p>
+                     <p>습도 : {SearchResults.main.humidity}</p>
 
-                     <Link to={`/forecast5days?query=${SearchResults.name}`}>{`${SearchResults.name}의 5일치 날씨`}</Link>
+                     <Link className="forecastlink" to={`/forecast5days?query=${SearchResults.name}`}>{`${SearchResults.name}의 5일치 날씨`}</Link>
                   </p>
                ) : (
                   <p>null</p>

@@ -26,6 +26,7 @@ const fetchFromApi = async (url, params = {}) => {
 export const searchCurrentWeather = (cityname) => {
    return fetchFromApi('/weather', {
       q: cityname,
+      lang: 'kr',
    })
 }
 
