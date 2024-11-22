@@ -13,7 +13,7 @@ export default function WeatherCard({ forecasts_list, name }) {
          <Grid class="container" container spacing={2.5}>
             {forecasts_list.map((forecast) => {
                hour = parseInt(forecast.dt_txt.split(' ')[1].split(':')[0], 10)
-               if (hour === 12) {
+               if (hour === 15) {
                   return (
                      <Card sx={{ maxWidth: 345 }}>
                         {forecast.weather.map((element) => (
