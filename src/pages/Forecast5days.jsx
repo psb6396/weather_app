@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
+import Menu from '../components/Menu'
+import Footer from '../components/Footer'
+
 var forecasts_list = []
 function Forecast5days() {
    const [Params] = useSearchParams()
