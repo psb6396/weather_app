@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchSearchResults } from '../features/weather/weatherSlice'
 import SearchingPart from './SearchingPart'
+import Main from '../pages/Main'
 import { useEffect } from 'react'
 
 function SearchResults() {
@@ -13,8 +14,8 @@ function SearchResults() {
       dispatch(fetchSearchResults({ query }))
    }, [dispatch, query])
    const { SearchResults, loading, error } = useSelector((state) => state.weathers)
-   // dispatch(fetchSearchResults({ query }))
-   return <SearchingPart SearchResults={SearchResults} />
+   // return <SearchingPart SearchResults={SearchResults} />
+   return <Main SearchResults={SearchResults} />
 }
 
 export default SearchResults

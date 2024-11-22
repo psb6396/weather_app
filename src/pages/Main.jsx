@@ -3,10 +3,11 @@ import SearchingPart from '../components/SearchingPart'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
 
-function Main() {
+function Main({ SearchResults }) {
    return (
       <div>
-         <SearchingPart />
+         <Menu />
+         <SearchingPart SearchResults={SearchResults} />
          <Footer />
       </div>
    )

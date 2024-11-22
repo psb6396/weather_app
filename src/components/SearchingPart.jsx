@@ -27,7 +27,6 @@ function SearchingPart({ SearchResults }) {
 
    return (
       <>
-         <Menu />
          <div class="container">
             <div
                class="search"
