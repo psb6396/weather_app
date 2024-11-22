@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import Menu from './Menu'
+import '../css/SearchingPart.css'
 
 function SearchingPart({ SearchResults }) {
    const [searchQuery, setSearchQuery] = useState('')
@@ -22,13 +23,14 @@ function SearchingPart({ SearchResults }) {
       [searchQuery, navigate]
    )
 
-   console.log(SearchResults)
+   // console.log(SearchResults)
 
    return (
-      <>
+      <div class="parent-container">
          <Menu />
          <div class="container">
             <div
+               class="search"
                style={{
                   width: '400px',
                   height: '400px',
@@ -38,8 +40,8 @@ function SearchingPart({ SearchResults }) {
                   backgroundRepeat: 'no-repeat',
                }}
             >
-               <div className="search">
-                  <h1 className="header_msg">지역을 검색하세요</h1>
+               <div className="searchingpart">
+                  <h2 className="header_msg">지역을 검색하세요(영어로만)</h2>
 
                   <form className="search_form" onSubmit={handleSearch}>
                      <TextField sx={{ backgroundColor: 'white' }} width="100px" label="지역검색" id="fullWidth" value={searchQuery} onChange={handleInputChange} />
@@ -51,6 +53,7 @@ function SearchingPart({ SearchResults }) {
                </div>
             </div>
             <div
+               class="searchresults"
                style={{
                   width: '400px',
                   height: '400px',
@@ -62,7 +65,8 @@ function SearchingPart({ SearchResults }) {
             >
                {SearchResults ? (
                   <p>
-                     {SearchResults.id}
+                     <h2>{SearchResults.name}의 날씨</h2>
+
                      <Link to={`/forecast5days?query=${SearchResults.name}`}>{`${SearchResults.name}의 5일치 날씨`}</Link>
                   </p>
                ) : (
@@ -70,7 +74,7 @@ function SearchingPart({ SearchResults }) {
                )}
             </div>
          </div>
-      </>
+      </div>
    )
 }
 

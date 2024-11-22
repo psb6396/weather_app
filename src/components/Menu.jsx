@@ -1,20 +1,18 @@
 import { NavLink } from 'react-router-dom'
-import '../css/footer.css'
+import '../css/Menu.css'
 import logo from '../img/logo_white_cropped.png'
 
 function Menu() {
    return (
-      <header>
-         <nav>
-            <ul>
-               <li>
-                  <NavLink to="/">
-                     <img src={logo} />
-                  </NavLink>
-               </li>
-            </ul>
-         </nav>
-      </header>
+      <nav>
+         <ul>
+            <li>
+               <NavLink to="/">
+                  <img src={logo} />
+               </NavLink>
+            </li>
+         </ul>
+      </nav>
    )
 }
 
